@@ -4,8 +4,34 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :username, '使用者帳號' %><br />
+    <div class="control">
+      <%= f.text_field :username, class:'input is-medium' %>
+    </div>
+    <p class="help is-success">範例:@abcdefg</p>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar, '大頭照' %><br />
+    <div class="control">
+      <%= f.file_field :avatar %>
+    </div>
+
+    <%= avatar(current_user) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :intro, '個人簡介' %><br />
+    <div class="control">
+      <%= f.text_area :intro, class:'textarea is-medium', rows: 5%>
+    </div>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="control">
+      <%= f.email_field :email, autocomplete: "email", class:'input is-medium' %>
+    </div>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,7 +40,9 @@
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <div class="control">
+      <%= f.password_field :password, autocomplete: "new-password", class:'input is-medium' %>
+    </div>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -23,16 +51,14 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="control">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'input is-medium' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class:'button is-primary is-medium' %>
   </div>
 <% end %>
 
