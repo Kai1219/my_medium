@@ -12,6 +12,7 @@ class Story < ApplicationRecord
   #relationship
   belongs_to :user
   has_one_attached :cover_image
+  has_many :comments
 
   #scope
   #default_scope { where(deleted_at: nil) }
