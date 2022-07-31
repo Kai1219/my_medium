@@ -1,11 +1,22 @@
 // Place all the styles related to the stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import './editor.scss';
+@import 'froala-editor/css/plugins/table.min.css';
+@import 'froala-editor/css/plugins/colors.min.css';
+@import 'froala-editor/css/plugins/draggable.min.css';
+@import 'froala-editor/css/plugins/fullscreen.min.css';
+@import 'froala-editor/css/plugins/image.min.css';
+@import 'froala-editor/css/plugins/video.min.css';
 form {
     img.cover_image {
         display: block;
         margin: 0 auto;
     }
+}
+
+form.story-editor {
+    margin-bottom: 2em;
 }
 
 .story-content {
@@ -67,5 +78,10 @@ form {
     }
     p {
         color: darkgray;
+    }
+    //bookmark
+    .bookmark-button {
+        margin-left: 1em;
+        font-size: 1.4em;
     }
 }

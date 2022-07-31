@@ -8,7 +8,7 @@
         </h2>
 
         <p>
-            <%= story.content %>
+            <%= strip_tags(story.content).truncate(200) %>
         </p>
         <p>最後編輯時間:
             <%= time_ago_in_words(story.updated_at) %>
